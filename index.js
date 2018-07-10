@@ -9,23 +9,13 @@ const getUrlByParamObj = (obj) => {
     keyArr.forEach((key, index) => {
         if (index === 0) {
             url += `?${key}=${obj[key]}`;
-        }
-        else {
+        } else {
             url += `&${key}=${obj[key]}`;
         }
     });
     return url;
 };
 
-module.export = {
+module.exports = {
     getUrlByParamObj
 };
-
-let data = {
-    a: '你好',
-    b: '你不好',
-    c: '你真的很好'
-};
-
-let url = getUrlByParamObj(data);
-console.log('url', url);
