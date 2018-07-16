@@ -4,17 +4,17 @@ const api = require('./src/api');
 const color = require('./src/color');
 
 // 获得 ip 地址
-const hostname = os.hostname;
-let IPv4;
-for (let i = 0; i < os.networkInterfaces().en0.length; i++) {
-    if (os.networkInterfaces().en0[i].family === 'IPv4') {
-        IPv4 = os
-            .networkInterfaces()
-            .en0[i]
-            .address;
-    }
-}
-console.log('hostname', hostname, 'IPv4', IPv4);
+// const hostname = os.hostname;
+// let IPv4;
+// for (let i = 0; i < os.networkInterfaces().en0.length; i++) {
+//     if (os.networkInterfaces().en0[i].family === 'IPv4') {
+//         IPv4 = os
+//             .networkInterfaces()
+//             .en0[i]
+//             .address;
+//     }
+// }
+// console.log('hostname', hostname, 'IPv4', IPv4);
 
 // express
 const app = express();
@@ -66,9 +66,9 @@ app.get('/getBaiduImgs', (req, res) => {
     });
 });
 
-const server = app.listen(3003, () => {
+const server = app.listen(13003, () => {
     const port = server
         .address()
         .port
-    console.log(`listening on http://${IPv4}:${port}`);
+    console.log(`listening on http://:${port}`);
 });
