@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/BadWaka/kai-utils#readme",
   "dependencies": {
+    "express": "^4.16.3",
     "request": "^2.87.0"
   }
 }
