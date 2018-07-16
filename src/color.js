@@ -8,11 +8,16 @@
   * 得到随机颜色
   * @return {string} colorStr
   */
-const getRandomColor = (opacity = 1) => {
+const getRandomColor = (obj) => {
+    // 默认颜色数组
+    if (obj.defaultColorArr) {
+        let randomIndex = Math.floor(Math.random() * 6);
+        return obj.defaultColorArr[randomIndex];
+    }
     let r = Math.floor(Math.random() * 255);
     let g = Math.floor(Math.random() * 255);
     let b = Math.floor(Math.random() * 255);
-    let color = 'rgba(' + r + ',' + g + ',' + b + ')';
+    let color = 'rgb(' + r + ',' + g + ',' + b + ')';
     return color;
 };
 

@@ -1,10 +1,10 @@
 const fs = require('fs');
-const api = require('./api');
-const color = require('./color');
+const api = require('../src/api');
+const color = require('../src/color');
 
 api.getBaiduImgs({
     word: '刺客信条',
-    pn: 0,
+    pn: 50,
     rn: 50
 }, (obj) => {
     // 数据处理
@@ -17,7 +17,18 @@ api.getBaiduImgs({
                 src: item.thumburl,
                 width: item.width,
                 height: item.height,
-                color: color.getRandomColor()
+                color: color.getRandomColor({
+                    defaultColorArr: [
+                        '#64808f',
+                        '#be5a37',
+                        '#0f0903',
+                        '#1f372c',
+                        '#c7945f',
+                        '#617e9f'
+                    ]
+                }),
+                text: Math.floor(Math.random() * 100),
+                icon: 'imgs'
             };
             array.push(obj);
         });
