@@ -4,8 +4,8 @@ const color = require('../src/color');
 
 api.getBaiduImgs({
     word: '刺客信条',
-    pn: 50,
-    rn: 50
+    pn: 0,
+    rn: 20
 }, (obj) => {
     // 数据处理
     let jsonObj = JSON.parse(obj.body);
